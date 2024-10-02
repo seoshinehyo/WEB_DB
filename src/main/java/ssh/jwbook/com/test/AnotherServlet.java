@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "cookie2Servlet", urlPatterns = "/cookie2Servlet")
-public class Cookie2Servlet extends HttpServlet {
+@WebServlet(name = "anotherServlet", urlPatterns = "/anotherServlet")
+public class AnotherServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,10 +20,13 @@ public class Cookie2Servlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-
-        out.write("<html><title></title><body>");
-        out.write("Welcome ");
-        out.write("<a href=\"/sendServlet\">Login</a>");
-        out.write("</body></html>");
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("name")) {
+                    out.write("welcome2 " + cookie.getValue());
+                }
+            }
+        }
     }
 }
