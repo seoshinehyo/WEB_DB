@@ -1,4 +1,4 @@
-package ssh.jwbook.com.test;
+package ssh.jwbook.com.cookie;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,34 +10,23 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "cookieServlet", urlPatterns = "/cookieServlet")
-public class CookieServlet extends HttpServlet {
+@WebServlet(name = "anotherServlet", urlPatterns = "/anotherServlet")
+public class AnotherServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
-        response.addCookie(new Cookie("name", "kim"));
-
-        Cookie[] cookies = request.getCookies();
 
         PrintWriter out = response.getWriter();
 
-        boolean isLoggedIn = false;
-
+        Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("name")) {
-                    out.write(cookie.getValue() + " 회원님 로그인 하세요");
-                    isLoggedIn = true;
-                    break;
+                    out.write("welcome2 " + cookie.getValue());
                 }
             }
         }
-
-        if (!isLoggedIn) {
-            out.write("회원가입 하세요");
-        }
-
     }
 }

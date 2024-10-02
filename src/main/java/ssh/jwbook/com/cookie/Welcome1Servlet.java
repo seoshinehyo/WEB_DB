@@ -1,4 +1,4 @@
-package ssh.jwbook.com.test;
+package ssh.jwbook.com.cookie;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,8 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "cookie2Servlet", urlPatterns = "/cookie2Servlet")
-public class Cookie2Servlet extends HttpServlet {
+@WebServlet(name = "welcome1Servlet", urlPatterns = "/welcome1Servlet")
+public class Welcome1Servlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,11 +19,20 @@ public class Cookie2Servlet extends HttpServlet {
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
+        String name = null;
 
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("name")) {
+                    name = cookie.getValue();
+                }
+            }
+        }
 
         out.write("<html><title></title><body>");
-        out.write("Welcome ");
-        out.write("<a href=\"/sendServlet\">Login</a>");
+        out.write("welcome1 " + name);
+        out.write("<br><a href=\"/anotherServlet\">go Another Page</a>");
         out.write("</body></html>");
     }
 }

@@ -1,4 +1,4 @@
-package ssh.jwbook.com.test;
+package ssh.jwbook.com.cookie;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
