@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form method="GET" action="/forwardDispatcherServlet">  <!-- 그냥 "forwardDispatcherServlet" 하면 상대 경로라서 ch05/for~~ 돼서 안 됨. / 붙여야 절대경로라서 forward 됨 -->
+        ID : <input type="text" name="id"><br>
+        PW : <input type="text" name="pw"><br>
+        <input type="submit" value="send">
+    </form>
+</body>
+</html>

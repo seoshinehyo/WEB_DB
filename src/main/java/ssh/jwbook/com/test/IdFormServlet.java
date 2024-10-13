@@ -30,13 +30,13 @@ public class IdFormServlet extends HttpServlet {
             gender = "error";
         }
 
-//        request.setAttribute("name", name);
-//        request.setAttribute("gender", gender);
-//
-//        String viewPath = "WEB-INF/prtInfo.jsp";
-//        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-//        dispatcher.forward(request, response);
+        request.setAttribute("name", name);
+        request.setAttribute("gender", gender);
 
-        response.sendRedirect("/prtInfoServlet?name=" + name + "&gender=" + gender);
+        String viewPath = "WEB-INF/prtInfo.jsp";
+        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+        dispatcher.forward(request, response);
+
+//        response.sendRedirect("/prtInfoServlet?name=" + name + "&gender=" + gender);
     }
 }
