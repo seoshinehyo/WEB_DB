@@ -35,5 +35,13 @@ public class GetSessionServlet extends HttpServlet {
             String value = session.getAttribute(s_name).toString();
             out.println(s_name + " : " + value);
         }
+
+//        request.getHeaderNames().asIterator()
+//                .forEachRemaining(headerName -> System.out.println(headerName + ": "+ request.getHeader(headerName)));
+
+//        while (headerNames.hasMoreElements()) {
+//            String headerName = headerNames.nextElement();
+//            System.out.println(headerName + ": " + request.getHeader(headerName));
+//        }
     }
 }
