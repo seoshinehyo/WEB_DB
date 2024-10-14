@@ -23,20 +23,32 @@ public class CookieServlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
 
-        boolean isLoggedIn = false;
+//        boolean isLoggedIn = false;
+//
+//        if (cookies != null) {
+//            for (Cookie cookie : cookies) {
+//                if (cookie.getName().equals("name")) {
+//                    out.write(cookie.getValue() + " 회원님 로그인 하세요");
+//                    isLoggedIn = true;
+//                    break;
+//                }
+//            }
+//        }
+//
+//        if (!isLoggedIn) {
+//            out.write("회원가입 하세요");
+//        }
 
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("name")) {
-                    out.write(cookie.getValue() + " 회원님 로그인 하세요");
-                    isLoggedIn = true;
-                    break;
+                    if (cookie.getValue().equals("")) {
+                        out.print("회원가입 하세요");
+                    } else {
+                        out.write(cookie.getValue() + " 회원님 로그인 하세요");
+                    }
                 }
             }
-        }
-
-        if (!isLoggedIn) {
-            out.write("회원가입 하세요");
         }
 
     }
