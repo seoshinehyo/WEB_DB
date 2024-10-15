@@ -13,6 +13,18 @@ import java.io.PrintWriter;
 public class CoursesServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+//        response.setContentType("text/html; charset=utf-8");
+//        response.setCharacterEncoding("UTF-8");
+//
+//        PrintWriter out = response.getWriter();
+//
+//        String name = request.getParameter("name");
+//        String nickname = request.getParameter("nickname");
+//        String grade = request.getParameter("grade");
+//        String gender = request.getParameter("gender");
+//        String[] courses = request.getParameterValues("courses");
+
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
 

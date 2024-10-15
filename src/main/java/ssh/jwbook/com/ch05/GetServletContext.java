@@ -28,7 +28,19 @@ public class GetServletContext extends HttpServlet {
 
         ServletContext appication = request.getServletContext();
         appication.setAttribute("ani", "dog");
+        appication.setAttribute("mal", "cat");
         String ani = (String) appication.getAttribute("ani");
+
+        // application.getAttributeNames() 테스트
+        Enumeration<String> en2 = appication.getAttributeNames();
+
+        while (en2.hasMoreElements()) {
+            String name2 = en2.nextElement();
+            String value2 = appication.getAttribute(name2).toString();
+            System.out.println(value2);
+        }
+
+
 
         PrintWriter out = response.getWriter();
         out.println("getAttribute : " + name + ",     " + id);
