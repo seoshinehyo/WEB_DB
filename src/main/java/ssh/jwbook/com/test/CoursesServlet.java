@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 @WebServlet("/coursesServlet")
 public class CoursesServlet extends HttpServlet {
@@ -35,6 +36,12 @@ public class CoursesServlet extends HttpServlet {
         String[] courses = request.getParameterValues("courses");
 
         PrintWriter out = response.getWriter();
+
+//        Enumeration<String> en = request.getParameterNames();
+//        while (en.hasMoreElements()) {
+//            String name2 = en.nextElement();
+//            String value2 = request.getParameter(name2);
+//        }
 
         out.write("<html><title></title><body>정보 확인<br><br>");
         out.write("이름 : " + name);

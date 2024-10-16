@@ -32,10 +32,10 @@ public class GetServletContext extends HttpServlet {
         String ani = (String) appication.getAttribute("ani");
 
         // application.getAttributeNames() 테스트
-        Enumeration<String> en2 = appication.getAttributeNames();
+        Enumeration en2 = appication.getAttributeNames();
 
         while (en2.hasMoreElements()) {
-            String name2 = en2.nextElement();
+            String name2 = en2.nextElement().toString();
             String value2 = appication.getAttribute(name2).toString();
             System.out.println(value2);
         }
