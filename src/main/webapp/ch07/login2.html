@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form method="POST" action="name.jsp">  <!-- 그냥 "forwardDispatcherServlet" 하면 상대 경로라서 ch05/for~~ 돼서 안 됨. / 붙여야 절대경로라서 forward 됨 -->
+        이름 : <input type="text" name="name"><br>
+        나이 : <input type="text" name="age"><br>
+        <input type="submit" value="send">
+    </form>
+</body>
+</html>
