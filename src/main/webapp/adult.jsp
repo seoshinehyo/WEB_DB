@@ -16,7 +16,5 @@
 <jsp:forward page="adultResult.jsp"/>
 <%--<jsp:setProperty name="adult" property="name" value="KIM" />--%>
 <%--<jsp:setProperty name="adult" property="age" value="23" />--%>
-
-
 </body>
 </html>
