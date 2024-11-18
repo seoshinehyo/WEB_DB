@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @WebServlet("/addressBook")
-public class AddressBookController extends HttpServlet {
+public class AddressBookController extends HttpServlet { // 여기서 관리
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
