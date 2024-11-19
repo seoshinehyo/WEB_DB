@@ -42,7 +42,7 @@ public class AddressBookController extends HttpServlet { // 여기서 관리
         ArrayList<AddressBookDto> list = addressBookDao.listAll();
 
         ServletContext app = request.getServletContext();
-        app.setAttribute("list_all", list);
+        app.setAttribute("list_all", list); // select로 가져온 리스트를 application 단위로 넘기기
         return"/addressbook/listView.jsp";
     }
 

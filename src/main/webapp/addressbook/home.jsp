@@ -26,7 +26,7 @@
         <label for="tel">전화번호:</label>
         <input type="text" id="tel" name="tel"><br><br>
         <input type="submit" value="Add">
-        <input type="hidden" name="action" value="add">
+        <input type="hidden" name="action" value="add"> <!-- hidden을 통해 action을 add로 넘기기 -->
     </fieldset>
 </form>
 
@@ -38,7 +38,7 @@
         <label for="del-name">이름:</label>
         <input type="text" id="del-name" name="name"><br><br>
         <input type="submit" value="Delete">
-        <input type="hidden" name="action" value="del">
+        <input type="hidden" name="action" value="del"> <!-- hidden을 통해 action을 del로 넘기기 -->
     </fieldset>
 </form>
 
@@ -50,7 +50,7 @@
         <label for="search-name">이름:</label>
         <input type="text" id="search-name" name="name"><br><br>
         <input type="submit" value="Search">
-        <input type="hidden" name="action" value="search">
+        <input type="hidden" name="action" value="search"> <!-- hidden을 통해 action을 search로 넘기기 -->
     </fieldset>
 </form>
 </body>
