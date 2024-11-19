@@ -14,21 +14,41 @@
     <title>DB 연결 테스트</title>
 </head>
 <body>
-<%
-    Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection con= DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/jdbc_test",
-            "root", "ssh159357!");
-    PreparedStatement pstmt = con.prepareStatement("SELECT * FROM User");
+<%--<%--%>
+<%--    Class.forName("com.mysql.cj.jdbc.Driver");--%>
+<%--    Connection con= DriverManager.getConnection(--%>
+<%--            "jdbc:mysql://localhost:3306/jdbc_test",--%>
+<%--            "root", "ssh159357!");--%>
+<%--    PreparedStatement pstmt = con.prepareStatement("SELECT * FROM User");--%>
 
-    ResultSet rs = pstmt.executeQuery();
+<%--    ResultSet rs = pstmt.executeQuery();--%>
+
+<%--    String str = "";--%>
+<%--    while(rs.next()) {--%>
+<%--        str += rs.getString("name") + " " + rs.getString("email") + "<br>";--%>
+<%--    }--%>
+<%--    out.print(str);--%>
+<%--    rs.close(); pstmt.close(); con.close();--%>
+<%--%>--%>
+
+<%
+    Connection con = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+
+    Class.forName("com.mysql.cj.jdbc.Driver");
+    con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbc_test", "root", "ssh159357!");
+    pstmt = con.prepareStatement("SELECT * FROM User");
+    rs = pstmt.executeQuery();
 
     String str = "";
-    while(rs.next()) {
+    while (rs.next()) {
         str += rs.getString("name") + " " + rs.getString("email") + "<br>";
     }
     out.print(str);
-    rs.close(); pstmt.close(); con.close();
+    rs.close();
+    pstmt.close();
+    con.close();
 %>
 </body>
 </html>
